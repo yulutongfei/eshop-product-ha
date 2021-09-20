@@ -25,7 +25,8 @@ public class ProductController {
                 "  \"color\": \"红色,白色,黑色\",\n" +
                 "  \"size\": 5.5,\n" +
                 "  \"shopId\": 1,\n" +
-                "  \"modifiedTime\": \"2021-06-28 12:01:00\"\n" +
+                "  \"modifiedTime\": \"2021-06-28 12:01:00\",\n" +
+                "  \"cityId\": 1\n" +
                 "}";
     }
 }
