@@ -26,7 +26,8 @@ public class ProductController {
                 "  \"size\": 5.5,\n" +
                 "  \"shopId\": 1,\n" +
                 "  \"modifiedTime\": \"2021-06-28 12:01:00\",\n" +
-                "  \"cityId\": 1\n" +
+                "  \"cityId\": 1,\n" +
+                "  \"brandId\": 1\n" +
                 "}";
     }
 }
