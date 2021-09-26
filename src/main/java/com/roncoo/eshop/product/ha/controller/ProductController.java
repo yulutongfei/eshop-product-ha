@@ -1,5 +1,7 @@
 package com.roncoo.eshop.product.ha.controller;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,5 +31,29 @@ public class ProductController {
                 "  \"cityId\": 1,\n" +
                 "  \"brandId\": 1\n" +
                 "}";
+    }
+
+    @RequestMapping("/getProductInfos")
+    @ResponseBody
+    public String getProductInfos(String productIds) {
+        JSONArray jsonArray = new JSONArray();
+        for (String productId : productIds.split(",")) {
+            String json = "{\n" +
+                    "  \"id\": " + productId + ",\n" +
+                    "  \"name\": \"iphone7手机\",\n" +
+                    "  \"price\": 5599,\n" +
+                    "  \"pictureList\": \"a.jpg,b.jpg\",\n" +
+                    "  \"specification\": \"iphone7的规格\",\n" +
+                    "  \"service\": \"iphone7的售后服务\",\n" +
+                    "  \"color\": \"红色,白色,黑色\",\n" +
+                    "  \"size\": 5.5,\n" +
+                    "  \"shopId\": 1,\n" +
+                    "  \"modifiedTime\": \"2021-06-28 12:01:00\",\n" +
+                    "  \"cityId\": 1,\n" +
+                    "  \"brandId\": 1\n" +
+                    "}";
+            jsonArray.add(JSONObject.parseObject(json));
+        }
+        return jsonArray.toJSONString();
     }
 }
